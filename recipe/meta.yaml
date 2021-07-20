@@ -1,5 +1,5 @@
 {% set name = "darwin-py" %}
-{% set version = "0.5.20" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/darwin-py-{{ version }}.tar.gz
-  sha256: b7fc509034d66036016c6c6c9dd71f49e570bdc6ee40f517f5ab9ffa50bc2e4a
+  sha256: 8856e8d52654e7203a05c5ccfe7ef21b40db113013d910736d30d49981f1c83d
 
 build:
   number: 0
