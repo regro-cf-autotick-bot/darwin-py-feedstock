@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/darwin-py-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/darwin-py-{{ version }}.tar.gz
   sha256: b7fc509034d66036016c6c6c9dd71f49e570bdc6ee40f517f5ab9ffa50bc2e4a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - darwin=darwin.cli:main
@@ -19,14 +19,14 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - argcomplete
     - dataclasses
     - humanize
     - numpy
     - pillow
-    - python >=3.6
+    - python >={{ python_min }}
     - pyyaml >=5.1
     - requests
     - tqdm
@@ -45,6 +45,7 @@ test:
     - darwin --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/v7labs/darwin-py
